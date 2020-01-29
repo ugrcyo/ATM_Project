@@ -1,5 +1,14 @@
-************* Uğur Can Yazıcıoğlu*************  
-static void Main(string[] args)
+ï»¿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ATM_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
         {
             giris();
             int tus;
@@ -10,15 +19,15 @@ static void Main(string[] args)
                 switch (a)
                 {
                     case 1:
-                        Console.WriteLine("Çekmek istediğiniz miktarı giriniz");
+                        Console.WriteLine("Ã‡ekmek istediÄŸiniz miktarÄ± giriniz");
                         int para_cekme = Convert.ToInt32(Console.ReadLine());
                         para_cekim(para_cekme);
                         break;
                     case 2:
-                        Console.WriteLine("Kredi kartına yatırmak için 1");
-                        Console.WriteLine("Hesaba yatırmak için 2");
-                        Console.WriteLine("Ana menü için 9");
-                        Console.WriteLine("Çıkış yapmak için herhangi bir tuşa basın");
+                        Console.WriteLine("Kredi kartÄ±na yatÄ±rmak iÃ§in 1");
+                        Console.WriteLine("Hesaba yatÄ±rmak iÃ§in 2");
+                        Console.WriteLine("Ana menÃ¼ iÃ§in 9");
+                        Console.WriteLine("Ã‡Ä±kÄ±ÅŸ yapmak iÃ§in herhangi bir tuÅŸa basÄ±n");
                         int para_yatirma = Convert.ToInt32(Console.ReadLine());
                         if (para_yatirma == 1)
                         {
@@ -26,21 +35,21 @@ static void Main(string[] args)
                         }
                         if (para_yatirma == 2)
                         {
-                            Console.WriteLine("Hesaba yatırmak istediğiniz tutarı giriniz");
+                            Console.WriteLine("Hesaba yatÄ±rmak istediÄŸiniz tutarÄ± giriniz");
                             int hesaba_yatirma = Convert.ToInt32(Console.ReadLine());
                             if (hesaba_yatirma > 0)
                             {
                                 int bakiye;
                                 bakiye = para + hesaba_yatirma;
-                                Console.WriteLine("Para hesabınıza yatırılmıştır");
+                                Console.WriteLine("Para hesabÄ±nÄ±za yatÄ±rÄ±lmÄ±ÅŸtÄ±r");
                                 Console.WriteLine("Hesap bakiyeniz:{0}", bakiye);
-                                
+
                                 para = bakiye;
                                 //ana_menu_cikis();
                             }
                             else
                             {
-                                Console.WriteLine("Hatalı giriş yaptınız");
+                                Console.WriteLine("HatalÄ± giriÅŸ yaptÄ±nÄ±z");
                                 //ana_menu_cikis();
                             }
 
@@ -57,18 +66,18 @@ static void Main(string[] args)
 
                         break;
                     case 3:
-                        Console.WriteLine("Başka hesaba EFT için 1");
-                        Console.WriteLine("Başka hesaba havale için 2");
+                        Console.WriteLine("BaÅŸka hesaba EFT iÃ§in 1");
+                        Console.WriteLine("BaÅŸka hesaba havale iÃ§in 2");
                         int para_gonderme = Convert.ToInt32(Console.ReadLine());
                         if (para_gonderme == 1)
                         {
-                            Console.WriteLine("EFT yapacağınız IBAN numarasını giriniz");
+                            Console.WriteLine("EFT yapacaÄŸÄ±nÄ±z IBAN numarasÄ±nÄ± giriniz");
                             Console.Write("TR-");
                             long eft;
                             eft = Convert.ToInt64(Console.ReadLine());
                             if (eft >= 100000000000 && eft <= 999999999999)
                             {
-                                Console.WriteLine("EFT yapmak istediğiniz tutarı giriniz");
+                                Console.WriteLine("EFT yapmak istediÄŸiniz tutarÄ± giriniz");
                                 int eft_tutar = Convert.ToInt32(Console.ReadLine());
                                 if (eft_tutar > 0 && eft_tutar > para)
                                 {
@@ -79,9 +88,9 @@ static void Main(string[] args)
                                 {
                                     int bakiye;
                                     bakiye = para - eft_tutar;
-                                    
+
                                     para = bakiye;
-                                    Console.WriteLine("Girdiğiniz tutar hesaba gönderlmiştir.");
+                                    Console.WriteLine("GirdiÄŸiniz tutar hesaba gÃ¶nderlmiÅŸtir.");
                                     Console.WriteLine("Hesap bakiyeniz:{0}", bakiye);
                                     //ana_menu_cikis();
                                 }
@@ -91,12 +100,12 @@ static void Main(string[] args)
                         }
                         if (para_gonderme == 2)
                         {
-                            Console.WriteLine("Havale yapacağınız hesap numarasını giriniz");
+                            Console.WriteLine("Havale yapacaÄŸÄ±nÄ±z hesap numarasÄ±nÄ± giriniz");
                             long havale;
                             havale = Convert.ToInt64(Console.ReadLine());
                             if (havale >= 10000000000 && havale <= 99999999999)
                             {
-                                Console.WriteLine("Havale yapmak istediğiniz tutarı giriniz");
+                                Console.WriteLine("Havale yapmak istediÄŸiniz tutarÄ± giriniz");
                                 int havale_tutar = Convert.ToInt32(Console.ReadLine());
                                 if (havale_tutar > 0 && havale_tutar > para)
                                 {
@@ -107,9 +116,9 @@ static void Main(string[] args)
                                 {
                                     int bakiye;
                                     bakiye = para - havale_tutar;
-                                  
+
                                     para = bakiye;
-                                    Console.WriteLine("Girdiğiniz tutar hesaba gönderlmiştir.");
+                                    Console.WriteLine("GirdiÄŸiniz tutar hesaba gÃ¶nderlmiÅŸtir.");
                                     Console.WriteLine("Hesap bakiyeniz:{0}", bakiye);
                                     //ana_menu_cikis();
                                 }
@@ -121,29 +130,29 @@ static void Main(string[] args)
 
                         break;
                     case 4:
-                        Console.WriteLine("Eğitim ödemeleri sayfası arızalı");
+                        Console.WriteLine("EÄŸitim Ã¶demeleri sayfasÄ± arÄ±zalÄ±");
                         //ana_menu_cikis();
                         break;
                     case 5:
-                        Console.WriteLine("Elektrik Faturası       1");
-                        Console.WriteLine("Telefon Faturası        2");
-                        Console.WriteLine("İnternet faturası       3");
-                        Console.WriteLine("Su Faturası             4");
-                        Console.WriteLine("OGS Ödemeleri           5");
+                        Console.WriteLine("Elektrik FaturasÄ±       1");
+                        Console.WriteLine("Telefon FaturasÄ±        2");
+                        Console.WriteLine("Ä°nternet faturasÄ±       3");
+                        Console.WriteLine("Su FaturasÄ±             4");
+                        Console.WriteLine("OGS Ã–demeleri           5");
                         int fatura = Convert.ToInt32(Console.ReadLine());
                         if (fatura > 0 && fatura <= 6)
                         {
                             switch (fatura)
                             {
                                 case 1:
-                                    Console.WriteLine("Fatura tutarını giriniz");
+                                    Console.WriteLine("Fatura tutarÄ±nÄ± giriniz");
                                     int fatura1 = Convert.ToInt32(Console.ReadLine());
                                     if (fatura1 > 0 && fatura1 <= para)
                                     {
                                         int bakiye;
                                         bakiye = para - fatura1;
                                         para = bakiye;
-                                        Console.WriteLine("Faturanız ödenmiştir.");
+                                        Console.WriteLine("FaturanÄ±z Ã¶denmiÅŸtir.");
                                         Console.WriteLine("Kalan bakiyeniz:" + bakiye);
                                         //ana_menu_cikis();
                                     }
@@ -154,14 +163,14 @@ static void Main(string[] args)
                                     }
                                     break;
                                 case 2:
-                                    Console.WriteLine("Fatura tutarını giriniz");
+                                    Console.WriteLine("Fatura tutarÄ±nÄ± giriniz");
                                     int fatura2 = Convert.ToInt32(Console.ReadLine());
                                     if (fatura2 > 0 && fatura2 <= para)
                                     {
                                         int bakiye;
                                         bakiye = para - fatura2;
                                         para = bakiye;
-                                        Console.WriteLine("Faturanız ödenmiştir.");
+                                        Console.WriteLine("FaturanÄ±z Ã¶denmiÅŸtir.");
                                         Console.WriteLine("Kalan bakiyeniz:" + (para - fatura2));
                                         //ana_menu_cikis();
                                     }
@@ -173,14 +182,14 @@ static void Main(string[] args)
                                     break;
 
                                 case 3:
-                                    Console.WriteLine("Fatura tutarını giriniz");
+                                    Console.WriteLine("Fatura tutarÄ±nÄ± giriniz");
                                     int fatura3 = Convert.ToInt32(Console.ReadLine());
                                     if (fatura3 > 0 && fatura3 <= para)
                                     {
                                         int bakiye;
                                         bakiye = para - fatura3;
                                         para = bakiye;
-                                        Console.WriteLine("Faturanız ödenmiştir.");
+                                        Console.WriteLine("FaturanÄ±z Ã¶denmiÅŸtir.");
                                         Console.WriteLine("Kalan bakiyeniz:" + (para - fatura3));
                                         //ana_menu_cikis();
                                     }
@@ -192,14 +201,14 @@ static void Main(string[] args)
                                     break;
 
                                 case 4:
-                                    Console.WriteLine("Fatura tutarını giriniz");
+                                    Console.WriteLine("Fatura tutarÄ±nÄ± giriniz");
                                     int fatura4 = Convert.ToInt32(Console.ReadLine());
                                     if (fatura4 > 0 && fatura4 <= para)
                                     {
                                         int bakiye;
                                         bakiye = para - fatura4;
                                         para = bakiye;
-                                        Console.WriteLine("Faturanız ödenmiştir.");
+                                        Console.WriteLine("FaturanÄ±z Ã¶denmiÅŸtir.");
                                         Console.WriteLine("Kalan bakiyeniz:" + (para - fatura4));
                                         //ana_menu_cikis();
                                     }
@@ -212,14 +221,14 @@ static void Main(string[] args)
 
 
                                 case 5:
-                                    Console.WriteLine("Fatura tutarını giriniz");
+                                    Console.WriteLine("Fatura tutarÄ±nÄ± giriniz");
                                     int fatura5 = Convert.ToInt32(Console.ReadLine());
                                     if (fatura5 > 0 && fatura5 <= para)
                                     {
                                         int bakiye;
                                         bakiye = para - fatura5;
                                         para = bakiye;
-                                        Console.WriteLine("Faturanız ödenmiştir.");
+                                        Console.WriteLine("FaturanÄ±z Ã¶denmiÅŸtir.");
                                         Console.WriteLine("Kalan bakiyeniz:" + (para - fatura5));
                                         //ana_menu_cikis();
                                     }
@@ -234,14 +243,14 @@ static void Main(string[] args)
                         }
                         else
                         {
-                            Console.WriteLine("Hatalı giriş yaptınız.");
+                            Console.WriteLine("HatalÄ± giriÅŸ yaptÄ±nÄ±z.");
                             //ana_menu_cikis();
                         }
                         break;
                     case 6:
-                        Console.WriteLine("Şifre değiştirmek için 1");
+                        Console.WriteLine("Åifre deÄŸiÅŸtirmek iÃ§in 1");
                         int degisim = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Yeni şifrenizi girin");
+                        Console.WriteLine("Yeni ÅŸifrenizi girin");
                         string yeni_sifre = Console.ReadLine();
                         pin = yeni_sifre;
                         //ana_menu_cikis();
@@ -249,8 +258,8 @@ static void Main(string[] args)
 
                 }
 
-                Console.WriteLine("Ana menü için 9'a basınız");
-                Console.WriteLine("Çıkmak için herhangi bir tuşa basınız");
+                Console.WriteLine("Ana menÃ¼ iÃ§in 9'a basÄ±nÄ±z");
+                Console.WriteLine("Ã‡Ä±kmak iÃ§in herhangi bir tuÅŸa basÄ±nÄ±z");
                 tus = Convert.ToInt32(Console.ReadLine());
                 //ana_menu_cikis(tus);
             } while (tus == 9);
@@ -258,7 +267,7 @@ static void Main(string[] args)
         }
         static int para = 250;
         static string pin = "ab18";
-        #region Giriş
+        #region GiriÅŸ
 
         static void giris()
         {
@@ -266,8 +275,8 @@ static void Main(string[] args)
 
             while (true)
             {
-                Console.WriteLine("Kartlı Giriş için 1'e basınız");
-                Console.WriteLine("Kartsız Giriş için 2'e basınız");
+                Console.WriteLine("KartlÄ± GiriÅŸ iÃ§in 1'e basÄ±nÄ±z");
+                Console.WriteLine("KartsÄ±z GiriÅŸ iÃ§in 2'e basÄ±nÄ±z");
 
                 try
                 {
@@ -279,11 +288,11 @@ static void Main(string[] args)
                         string girilen;
                         while (hak > 0)
                         {
-                            Console.Write("Şifre giriniz>>>");
+                            Console.Write("Åifre giriniz>>>");
                             girilen = Console.ReadLine();
                             if (girilen == pin)
                             {
-                                
+
                                 break;
                             }
                             else hak--;
@@ -300,7 +309,7 @@ static void Main(string[] args)
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Yanlış tuşlama");
+                    Console.WriteLine("YanlÄ±ÅŸ tuÅŸlama");
                 }
                 break;
             }
@@ -309,11 +318,11 @@ static void Main(string[] args)
         #endregion
 
 
-        #region Ana Menü ve Çıkış
+        #region Ana MenÃ¼ ve Ã‡Ä±kÄ±ÅŸ
         static void ana_menu_cikis(int tus)
         {
-            Console.WriteLine("Ana menü için 9'a basınız");
-            Console.WriteLine("Çıkmak için herhangi bir tuşa basınız");
+            Console.WriteLine("Ana menÃ¼ iÃ§in 9'a basÄ±nÄ±z");
+            Console.WriteLine("Ã‡Ä±kmak iÃ§in herhangi bir tuÅŸa basÄ±nÄ±z");
             tus = Convert.ToInt32(Console.ReadLine());
             try
             {
@@ -337,15 +346,15 @@ static void Main(string[] args)
 
         #endregion
 
-        #region Ana Menü
+        #region Ana MenÃ¼
         static void ana_menu()
         {
-            Console.WriteLine("Para Çekmek için    1");
-            Console.WriteLine("Para yatırmak için  2");
+            Console.WriteLine("Para Ã‡ekmek iÃ§in    1");
+            Console.WriteLine("Para yatÄ±rmak iÃ§in  2");
             Console.WriteLine("Para Transferleri   3");
-            Console.WriteLine("Eğitim Ödemeleri    4");
-            Console.WriteLine("Ödemeler            5");
-            Console.WriteLine("Bilgi Güncelleme    6");
+            Console.WriteLine("EÄŸitim Ã–demeleri    4");
+            Console.WriteLine("Ã–demeler            5");
+            Console.WriteLine("Bilgi GÃ¼ncelleme    6");
         }
         #endregion
 
@@ -368,14 +377,14 @@ static void Main(string[] args)
                         bakiye = para - miktar;
                         para = bakiye;
                         Console.WriteLine("Kalan bakiye: {0}", bakiye);
-                        
+
                         //ana_menu_cikis();
                     }
                 }
                 catch (Exception)
                 {
                     a++;
-                    Console.WriteLine("Yanlış tuşlama.Tekrar giriniz.");
+                    Console.WriteLine("YanlÄ±ÅŸ tuÅŸlama.Tekrar giriniz.");
 
                 }
             } while (a > 0);
@@ -384,11 +393,11 @@ static void Main(string[] args)
         }
         static void kredi_karti()
         {
-            Console.WriteLine("Kredi kartı numaranızı giriniz");
+            Console.WriteLine("Kredi kartÄ± numaranÄ±zÄ± giriniz");
             long kart_no = Convert.ToInt64(Console.ReadLine());
             if (kart_no >= 100000000000 && kart_no <= 999999999999)
             {
-                Console.WriteLine("Kredi kartına yatırmak istediğiniz tutarı giriniz");
+                Console.WriteLine("Kredi kartÄ±na yatÄ±rmak istediÄŸiniz tutarÄ± giriniz");
                 int k_tutar = Convert.ToInt32(Console.ReadLine());
                 if (k_tutar > 0 && k_tutar > para)
                 {
@@ -400,12 +409,11 @@ static void Main(string[] args)
                     int bakiye;
                     bakiye = para - k_tutar;
                     para = bakiye;
-                    Console.WriteLine("Girdiğiniz tutar kredi kartına yatırılmıştır.");
+                    Console.WriteLine("GirdiÄŸiniz tutar kredi kartÄ±na yatÄ±rÄ±lmÄ±ÅŸtÄ±r.");
                     Console.WriteLine("Hesap bakiyeniz:{0}", bakiye);
                     //ana_menu_cikis();
                 }
-
             }
-
-
         }
+    }
+}

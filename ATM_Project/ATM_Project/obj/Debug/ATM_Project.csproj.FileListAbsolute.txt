@@ -1,0 +1,7 @@
+C:\Users\ugurc\source\repos\ATM_Project\ATM_Project\obj\Debug\ATM_Project.csprojAssemblyReference.cache
+C:\Users\ugurc\source\repos\ATM_Project\ATM_Project\obj\Debug\ATM_Project.csproj.CoreCompileInputs.cache
+C:\Users\ugurc\source\repos\ATM_Project\ATM_Project\bin\Debug\ATM_Project.exe.config
+C:\Users\ugurc\source\repos\ATM_Project\ATM_Project\bin\Debug\ATM_Project.exe
+C:\Users\ugurc\source\repos\ATM_Project\ATM_Project\bin\Debug\ATM_Project.pdb
+C:\Users\ugurc\source\repos\ATM_Project\ATM_Project\obj\Debug\ATM_Project.exe
+C:\Users\ugurc\source\repos\ATM_Project\ATM_Project\obj\Debug\ATM_Project.pdb
